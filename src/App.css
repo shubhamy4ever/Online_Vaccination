@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+.carousel-item {
+  height: 562px;
+}
+.carousel-caption {
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+  font-weight: 479;
+}
+.d-block {
+  opacity: 90%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.helpinfo {
+  border-right: 2px solid black;
+}
+.card-main {
+  outline: none;
+  margin: 0px 37px;
+  border-radius: 30px;
+}
+.card-main > img {
+  border-radius: 300px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-text {
+  font-size: large;
+  font-weight: 560;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+footer {
+  background: #141414;
   color: white;
+  padding: 41px 40px;
+}
+.centerfooter {
+  margin-left: 120px;
+}
+.height {
+  height: 150px;
+}
+.rounded-search {
+  border-radius: 30px;
+}
+.rounded-searchbox {
+  border-radius: 8px;
+}
+.container-223 {
+  position: absolute;
+  top: 60px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* media queries for responsivness */
+@media only screen and (max-width: 503px) {
+  .card {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .card-main {
+    display: none;
   }
+  .accordion {
+    display: none;
+  }
+}
+.lighter-cap{
+  font-size: 14px;
+  font-weight: lighter;
+  color: rgb(83, 83, 83);
+  width: 150px;
+}
+.center-it{
+  position: relative;
+  left: 80px;
 }
