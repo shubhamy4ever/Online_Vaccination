@@ -15,6 +15,7 @@ import React, { useState,useEffect } from 'react';
 
 function App() {
 
+  //fetch hospital by pincode
   const [hospdetails, setHospdetails] = useState([{_id:"empty",name:"",address:"address here",vaccineType:"vaccine name here"}])
   const host = "http://localhost:5000";
   const fetchdata = async (pincode) => {
@@ -41,7 +42,7 @@ function App() {
     <>
 {/* temporary */}
 
-<Searchbypin hospdetails={hospdetails} fetchdata={fetchdata}/>
+{/* <Searchbypin hospdetails={hospdetails} fetchdata={fetchdata}/> */}
 
 
 

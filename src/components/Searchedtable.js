@@ -22,7 +22,7 @@ export const Searchedtable = (props) => {
                     <div className="card-header">
                       {props.time}
                       <br />
-                      {props.slots} Slots
+                      {props.slots?props.slots +" Slots":"N/A"} 
                     </div>
                   </div>
                 </div>
