@@ -7,12 +7,21 @@ const { body, validationResult } = require("express-validator");
 const BookedVaccine = require("../models/BookedVaccine");
 
 //fetch hospitals by pincode  from body  get request /api/hosp/fetchhosptdetails anyone can fetch without credntials
-router.get("/fetchhosptdetails", async (req, res) => {
-  const Tpincode = req.body.pincode;
-  const hospital = await hospitalDetails
-    .find({ pincode: Tpincode })
-    .select("-admin");
-  res.json(hospital);
+router.post("/fetchhosptdetails", async (req, res) => {
+  try{
+    if(!req.body.pincode || req.body.pincode==null || req.body.pincode.length < 6 || req.body.pincode==""){
+      let success = false;
+      return res.json({success,error:"empty search box"});
+    }
+    success=true;
+    const Tpincode = req.body.pincode;
+    const hospital = await hospitalDetails
+      .find({ pincode: Tpincode })
+      .select("-admin");
+    res.json(hospital);
+  }catch(err){
+    return res.json(err);
+  }
 });
 
 //add a hospital  /api/hosp/addhospitals only admin can

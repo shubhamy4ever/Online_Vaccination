@@ -7,8 +7,9 @@ const mongooseUri=process.env.DB_CONNECTION;
 const port = 5000;
 
 
+
 //routes
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 app.use("/api/auth",require("./routes/auth"));
 app.use("/api/hosp",require("./routes/hospital"));

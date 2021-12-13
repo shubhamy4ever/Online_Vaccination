@@ -68,7 +68,15 @@ footer {
   color: rgb(83, 83, 83);
   width: 150px;
 }
+.center-it-3{
+  position: relative;
+  left: 30px;
+}
 .center-it{
   position: relative;
-  left: 80px;
+  left: 38%;
+}
+.bg-g{
+  background-color: rgb(74, 151, 74);
+  border-radius: 10px;
 }

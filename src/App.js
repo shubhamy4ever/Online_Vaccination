@@ -7,13 +7,41 @@ import { Admin } from "./components/Admin";
 import { Signup } from "./components/Signup";
 import { Searchbypin } from "./components/Searchbypin";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useState,useEffect } from 'react';
+
+
+
+
 
 function App() {
+
+  const [hospdetails, setHospdetails] = useState([{_id:"empty",name:"",address:"address here",vaccineType:"vaccine name here"}])
+  const host = "http://localhost:5000";
+  const fetchdata = async (pincode) => {
+    //Api call
+
+    const response = await fetch(`${host}/api/hosp/fetchhosptdetails`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify(pincode),
+    });
+
+    const json = await response.json();
+    setHospdetails(json);
+
+  };
+
+
+
+
+
   return (
     <>
 {/* temporary */}
 
-<Searchbypin />
+<Searchbypin hospdetails={hospdetails} fetchdata={fetchdata}/>
 
 
 
@@ -38,6 +66,8 @@ function App() {
           </Route>
         </Switch>
       </Router> */}
+
+
     </>
   );
 }
