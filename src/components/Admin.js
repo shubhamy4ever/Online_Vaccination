@@ -11,7 +11,7 @@ export const Admin = () => {
           id="floatingInput"
           placeholder="name@example.com"
         />
-        <label htmlFor="floatingInput">Email address</label>
+        <label htmlhtmlFor="floatingInput">Email address</label>
       </div>
       <div className="form-floating">
         <input
@@ -20,7 +20,7 @@ export const Admin = () => {
           id="floatingPassword"
           placeholder="Password"
         />
-        <label htmlFor="floatingPassword">Password</label>
+        <label htmlhtmlFor="floatingPassword">Password</label>
       </div>
       <button type="button" className="btn btn-primary my-3">
         Login

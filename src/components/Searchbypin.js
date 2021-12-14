@@ -1,16 +1,29 @@
 import React, { useState} from "react";
 import { Searchedtable } from "./Searchedtable";
+import { useHistory } from "react-router-dom";
 
 export const Searchbypin = (props) => {
   //use effect first the setting and initialzing state
 
+const host="http://localhost:5000"
 
-
-
+let history = useHistory();
   const [search, setSearch] = useState({pincode:""});
  
   function handleSubmit() {
 props.fetchdata(search);
+}
+
+async function bookVaccine(id){
+  // eslint-disable-next-line
+  const response = await fetch(`${host}/api/hosp/bookvaccine/${id}`, {
+    method: "PUT",
+    headers: {
+      "auth-token":
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFiMzYxMGMyYzZkYTQzNmU0ZjI1MzMyIn0sImlhdCI6MTYzOTIwNjkwNn0.GrhDsCTKSXZysW6tR5pmyoMclA8DBALANEsE23fAhYQ",
+    },
+  });
+  history.push("/bookingstatus");
 }
 
 function handleChange(e) {
@@ -18,7 +31,7 @@ function handleChange(e) {
     setSearch({ [e.target.name]: e.target.value });
     }
   return (
-    <div className="container my-5">
+    <div className="container my-5 moremargin">
       <h2>Search By Pincode</h2>
       <form className=" d-flex my-2">
         <input
@@ -51,6 +64,8 @@ function handleChange(e) {
               slots={hosp.slots}
               vaccineType={hosp.vaccineType}
               address={hosp.address}
+              bookVaccine={bookVaccine}
+              id={hosp._id}
             />
           );
         })}

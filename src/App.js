@@ -7,9 +7,9 @@ import { Admin } from "./components/Admin";
 import { Signup } from "./components/Signup";
 import { Searchbypin } from "./components/Searchbypin";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import React, { useState,useEffect } from 'react';
-
-
+import React, { useState } from 'react';
+import {BookingStatus} from "./components/BookingStatus"
+import { Searchbypinadmin } from "./components/Searchbypinadmin";
 
 
 
@@ -40,14 +40,16 @@ function App() {
 
   return (
     <>
+    
 {/* temporary */}
 
-{/* <Searchbypin hospdetails={hospdetails} fetchdata={fetchdata}/> */}
 
 
 
 
-      {/* <Router>
+
+
+      <Router>
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -65,8 +67,17 @@ function App() {
           <Route exact path="/signup">
             <Signup />
           </Route>
+          <Route exact path="/bookingstatus">
+          <BookingStatus />
+          </Route>
+          <Route exact path="/searchhosp">
+          <Searchbypin hospdetails={hospdetails} fetchdata={fetchdata}/>
+          </Route>
+          <Route exact path="/searchhospadmin">
+          <Searchbypinadmin hospdetails={hospdetails} fetchdata={fetchdata}/>
+          </Route>
         </Switch>
-      </Router> */}
+      </Router>
 
 
     </>

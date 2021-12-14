@@ -70,13 +70,37 @@ footer {
 }
 .center-it-3{
   position: relative;
-  left: 30px;
+  left: 24px;
+  font-weight: bold;
 }
 .center-it{
+  position: relative;
+  left: 38%;
+}
+.center-it-admin{
   position: relative;
   left: 38%;
 }
 .bg-g{
   background-color: rgb(74, 151, 74);
   border-radius: 10px;
+}
+.border-fluid{
+  border:2px solid rgb(153, 152, 152);
+}
+.lighter-cap2{
+  font-size: 20px;
+  font-weight: normal;
+  color: rgb(83, 83, 83);
+  margin: 4px 0px;
+}
+i{
+  cursor: pointer;
+}
+.moremargin{
+  position: relative;
+  top: 52px;
+}
+.center-it-box{
+  /* //todo */
 }

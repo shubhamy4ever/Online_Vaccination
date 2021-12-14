@@ -1,6 +1,6 @@
 import React from "react";
+export const Searchedtableadmin = (props) => {
 
-export const Searchedtable = (props) => {
   return (
     <>
       <div
@@ -10,7 +10,7 @@ export const Searchedtable = (props) => {
         <table className="table">
           <tbody>
             <tr>
-              <th scope="col" className="center-it">
+              <th scope="col" className="center-it-admin">
                 {props.date}
               </th>
             </tr>
@@ -20,7 +20,7 @@ export const Searchedtable = (props) => {
                 <p className="lighter-cap">{props.address}</p>
               </th>
               <td>
-                <div className="row row-cols-auto my-3 mx-3">
+                <div className="row row-cols-auto my-3 mx-3 center-it-box">
                   <div className="card bg-g" style={{ width: "8rem" }}>
                     <div className="card-header">
                       {props.time}
@@ -34,12 +34,13 @@ export const Searchedtable = (props) => {
               <td>
                 <button
                   type="button"
-                  disabled={props.slots < 1 ? true : false}
                   className="btn btn-success my-4"
-                  onClick={()=>{props.bookVaccine(props.id)}}
+                  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  onClick={()=>{props.addslots(props.whole)}}
                 >
-                  Book Now
+                  Add Slots
                 </button>
+                <i className="fas fa-trash-alt my-3 mx-2" onClick={()=>{props.deleteHosp(props.id)}}></i>
               </td>
             </tr>
           </tbody>

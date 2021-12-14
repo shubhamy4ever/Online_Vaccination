@@ -13,7 +13,7 @@ export const Signup = () => {
             placeholder="name"
             minLength={3}
           />
-          <label htmlFor="name">Name</label>
+          <label htmlhtmlFor="name">Name</label>
         </div>
         <div className="form-floating mb-3">
           <input
@@ -23,7 +23,7 @@ export const Signup = () => {
             placeholder="name@example.com"
             minLength={6}
           />
-          <label htmlFor="floatingInput">Email address</label>
+          <label htmlhtmlFor="floatingInput">Email address</label>
         </div>
         <div className="form-floating">
           <input
@@ -33,7 +33,7 @@ export const Signup = () => {
             placeholder="Password"
             minLength={3}
           />
-          <label htmlFor="floatingPassword">Password</label>
+          <label htmlhtmlFor="floatingPassword">Password</label>
         </div>
         <div className="form-floating my-3">
           <input
@@ -43,7 +43,7 @@ export const Signup = () => {
             placeholder="Password"
             minLength={3}
           />
-          <label htmlFor="floatingPassword">Password</label>
+          <label htmlhtmlFor="floatingPassword">Password</label>
         </div>
         <button type="button" className="btn btn-primary my-3">
           Sign Up
