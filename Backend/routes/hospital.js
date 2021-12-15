@@ -129,7 +129,7 @@ router.put("/bookvaccine/:id", fetchuser, async (req, res) => {
     if (booked.slots <= 0) {
       return res.json({ success, error: "cant book no slots available" });
     }
-    let user = await BookedVaccine.findOne({ id: req.userdetails.id });
+    let user = await BookedVaccine.findById(req.userdetails.id);
     if (user) {
       success = false;
       return res.status(400).json({

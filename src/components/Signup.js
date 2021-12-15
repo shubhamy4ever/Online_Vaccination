@@ -87,7 +87,7 @@ export const Signup = (props) => {
               value={credentials.confirmpassword}
               onChange={onChange}
             />
-            <label htmlFor="floatingPassword">Password</label>
+            <label htmlFor="floatingPassword">Confirm Password</label>
           </div>
           <button
             type="submit"

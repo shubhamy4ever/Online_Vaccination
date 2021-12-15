@@ -167,7 +167,7 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>You can log into the CoWIN portal using the link www.cowin.gov.in and click on the “Register / Sign In yourself” tab to register for COVID-19 vaccination.</strong>
+                <strong>You can signup and then login and book vaccine on this website.</strong>
               </div>
             </div>
           </div>
@@ -228,17 +228,17 @@ In general, all beneficiaries are recommended to register online and schedule va
                 className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
+                data-bs-target="#collapseFour"
                 aria-expanded="false"
-                aria-controls="collapseTwo"
+                aria-controls="collapseFour"
               >
                 How can I find the nearest Vaccination Center?
               </button>
             </h2>
             <div
-              id="collapseTwo"
+              id="collapseFour"
               className="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
+              aria-labelledby="headingFour"
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
@@ -252,17 +252,17 @@ In general, all beneficiaries are recommended to register online and schedule va
                 className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
+                data-bs-target="#collapseFive"
                 aria-expanded="false"
-                aria-controls="collapseThree"
+                aria-controls="collapseFive"
               >
                 Where will I receive confirmation of date and time of vaccination?
               </button>
             </h2>
             <div
-              id="collapseThree"
+              id="collapseFive"
               className="accordion-collapse collapse"
-              aria-labelledby="headingThree"
+              aria-labelledby="headingFive"
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
