@@ -1,13 +1,21 @@
 import React, { useState, useRef } from "react";
 
 import { Searchedtableadmin } from "./Searchedtableadmin";
+import { useHistory } from "react-router-dom";
 
 export const Searchbypinadmin = (props) => {
   //use effect first the setting and initialzing state
 
   const host = "http://localhost:5000";
-
+let history = useHistory();
   const [search, setSearch] = useState({ pincode: "" });
+
+  if(!localStorage.getItem("token")){
+    history.push("/admin")
+    props.showAlert("Trying to access unauthorized page Login first!!","danger");
+  }
+
+
 
   function handleSubmit() {
     props.fetchdata(search);
@@ -59,11 +67,12 @@ export const Searchbypinadmin = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjYxYjQzYjI4MGYwMDQ0MGI5OTQ3NGRlNSJ9LCJpYXQiOjE2MzkyMDI2MDh9.da5JpmFll_qbPjzRWtGoopZKjUypLDjOE2KmlRaPTc0",
+          localStorage.getItem("token"),
       },
       body: JSON.stringify({ vaccineType, slots, date, time }),
     });
     refRefresh.current.click();
+    props.showAlert("added data successfully","success");
   }
 
   //add hospital
@@ -74,11 +83,11 @@ export const Searchbypinadmin = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjYxYjQzYjI4MGYwMDQ0MGI5OTQ3NGRlNSJ9LCJpYXQiOjE2MzkyMDI2MDh9.da5JpmFll_qbPjzRWtGoopZKjUypLDjOE2KmlRaPTc0",
+          localStorage.getItem("token"),
       },
       body: JSON.stringify({ name, address, pincode }),
     });
-    
+    props.showAlert("added hospital succesfully","success")
   }
   const [hospdetadd, sethospdetadd] = useState({name:"",address:"",pincode:""});
   function handleClick2() {
@@ -101,14 +110,15 @@ export const Searchbypinadmin = (props) => {
       headers: {
         "Content-Type": "application/json",
         "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6eyJpZCI6IjYxYjQzYjI4MGYwMDQ0MGI5OTQ3NGRlNSJ9LCJpYXQiOjE2MzkyMDI2MDh9.da5JpmFll_qbPjzRWtGoopZKjUypLDjOE2KmlRaPTc0",
+          localStorage.getItem("token"),
       },
     });
     refRefresh.current.click();
+    props.showAlert("deleted successfully","success");
   }
 
   return (
-    <div className="container my-5 moremargin">
+    <div className="container my-5">
       <div>
         {" "}
         <button
@@ -143,7 +153,7 @@ export const Searchbypinadmin = (props) => {
             </div>
             <div className="modal-body">
               <div className="mb-3">
-                <label htmlhtmlFor="title" className="form-label" name="name">
+                <label htmlFor="title" className="form-label" name="name">
                   Name
                 </label>
                 <input
@@ -227,7 +237,7 @@ export const Searchbypinadmin = (props) => {
             </div>
             <div className="modal-body">
               <div className="mb-3">
-                <label htmlhtmlFor="title" className="form-label" name="title">
+                <label htmlFor="title" className="form-label" name="title">
                   Name
                 </label>
                 <input

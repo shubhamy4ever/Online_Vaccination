@@ -6,7 +6,7 @@ export default function BookedCard(props) {
     return (
 <div className="card">
   <div className="card-header">
-    Your Booking Status:
+   <h3> Your Booking Status:</h3>
   </div>
   <div className="card-body" style={props.hospitalname === "" ? { display: "none" } : { display: "block" }}>
     <h5 className="card-title">{props.name}</h5>

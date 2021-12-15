@@ -1,7 +1,12 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation ,useHistory} from "react-router-dom";
 export const Navbar = () => {
+let history = useHistory();
   const location = useLocation();
+  function handleLogout(){
+    localStorage.removeItem("token");
+history.push("/");
+  }
   return (
     <div>
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
@@ -55,9 +60,9 @@ export const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <Link className="btn btn-outline-success" to="/bookavaccine">
+            {!localStorage.getItem("token")?<Link className="btn btn-outline-success" to="/bookavaccine">
               Book A Vaccine
-            </Link>
+            </Link>: <button onClick={handleLogout} className="btn btn-danger">LogOut</button>}
           </div>
         </div>
       </nav>

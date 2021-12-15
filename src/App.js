@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState } from 'react';
 import {BookingStatus} from "./components/BookingStatus"
 import { Searchbypinadmin } from "./components/Searchbypinadmin";
-
+import Alert from "./components/Alert"
 
 
 function App() {
@@ -36,21 +36,22 @@ function App() {
 
 
 
-
-
+// for alert auto dismissable 
+  const [alert, setAlert] = useState(null);
+  const showAlert = (message, type)=>{
+    setAlert({
+      msg: message,
+      type: type
+    })
+    setTimeout(() => {
+        setAlert(null);
+    }, 1500);
+}
   return (
     <>
-    
-{/* temporary */}
-
-
-
-
-
-
-
-      <Router>
+        <Router>
         <Navbar />
+        <Alert alert={alert}/>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -59,24 +60,24 @@ function App() {
             <TotalCases />
           </Route>
           <Route exact path="/bookavaccine">
-            <BookAVaccine />
+            <BookAVaccine showAlert={showAlert}/>
           </Route>
           <Route exact path="/admin">
-            <Admin />
+            <Admin showAlert={showAlert}/>
           </Route>
           <Route exact path="/signup">
-            <Signup />
+            <Signup showAlert={showAlert}/>
           </Route>
           <Route exact path="/bookingstatus">
-          <BookingStatus />
+          <BookingStatus showAlert={showAlert}/>
           </Route>
           <Route exact path="/searchhosp">
-          <Searchbypin hospdetails={hospdetails} fetchdata={fetchdata}/>
+          <Searchbypin hospdetails={hospdetails} fetchdata={fetchdata} showAlert={showAlert}/>
           </Route>
           <Route exact path="/searchhospadmin">
-          <Searchbypinadmin hospdetails={hospdetails} fetchdata={fetchdata}/>
+          <Searchbypinadmin hospdetails={hospdetails} fetchdata={fetchdata} showAlert={showAlert}/>
           </Route>
-        </Switch>
+        </Switch> 
       </Router>
 
 

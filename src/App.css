@@ -33,6 +33,12 @@ footer {
 }
 .centerfooter {
   margin-left: 120px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+footer{
+  position: relative;
+  top: 130px;
 }
 .height {
   height: 150px;
@@ -100,4 +106,8 @@ i{
 .moremargin{
   position: relative;
   top: 52px;
+}
+.top-more{
+  position: relative;
+  bottom:90px;
 }

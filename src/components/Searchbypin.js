@@ -10,6 +10,11 @@ const host="http://localhost:5000"
 let history = useHistory();
   const [search, setSearch] = useState({pincode:""});
  
+  if(!localStorage.getItem("token")){
+    history.push("/bookavaccine")
+    props.showAlert("Trying to access unauthorized page Login first!!","danger");
+  }
+
   function handleSubmit() {
 props.fetchdata(search);
 }
@@ -20,10 +25,11 @@ async function bookVaccine(id){
     method: "PUT",
     headers: {
       "auth-token":
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjFiMzYxMGMyYzZkYTQzNmU0ZjI1MzMyIn0sImlhdCI6MTYzOTIwNjkwNn0.GrhDsCTKSXZysW6tR5pmyoMclA8DBALANEsE23fAhYQ",
+        localStorage.getItem("token"),
     },
   });
   history.push("/bookingstatus");
+  props.showAlert("Appointement booked successfully","success");
 }
 
 function handleChange(e) {

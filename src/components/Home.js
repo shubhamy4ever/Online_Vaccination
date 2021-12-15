@@ -6,8 +6,9 @@ import card1 from "../images/cards1.jpg";
 import card2 from "../images/cards2.jpg";
 import card3 from "../images/cards3.jpg";
 export const Home = () => {
+  localStorage.removeItem("token");
   return (
-    <>
+    <div className="top-more">
       <div
         id="carouselExampleCaptions"
         className="carousel slide"
@@ -144,7 +145,7 @@ export const Home = () => {
       </div>
       <hr />
       <div>
-        <h2>Frequently Asked Question's:</h2>
+        <h2 className="my-3">Frequently Asked Question's:</h2>
         <div className="accordion my-4 container" id="faq">
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">
@@ -156,7 +157,7 @@ export const Home = () => {
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Accordion Item #1
+                Where can I register for COVID-19 vaccination?
               </button>
             </h2>
             <div
@@ -166,15 +167,7 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classes that we use to style each element. These classes control
-                the overall appearance, as well as the showing and hiding via
-                CSS transitions. You can modify any of this with custom CSS or
-                overriding our default variables. It's also worth noting that
-                just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>You can log into the CoWIN portal using the link www.cowin.gov.in and click on the “Register / Sign In yourself” tab to register for COVID-19 vaccination.</strong>
               </div>
             </div>
           </div>
@@ -188,7 +181,7 @@ export const Home = () => {
                 aria-expanded="false"
                 aria-controls="collapseTwo"
               >
-                Accordion Item #2
+                Is online registration mandatory for Covid-19 vaccination?
               </button>
             </h2>
             <div
@@ -198,14 +191,9 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
+                <strong>Vaccination Centers provide for a limited number of on-spot registration slots every day. Beneficiaries aged 45 years and above can schedule appointments online or walk-in to vaccination Centers. Beneficiaries aged 18 years and above can schedule appointments online or walk-in to Government vaccination Centers. However, beneficiaries aged 18-44 years should mandatorily register themselves and schedule appointment online before going to a Private vaccination centre.
+
+In general, all beneficiaries are recommended to register online and schedule vaccination in advance for a hassle-free vaccination experience.</strong>
                 overflow.
               </div>
             </div>
@@ -220,7 +208,7 @@ export const Home = () => {
                 aria-expanded="false"
                 aria-controls="collapseThree"
               >
-                Accordion Item #3
+                Is there any registration charges to be paid?
               </button>
             </h2>
             <div
@@ -230,15 +218,55 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classes that we use to style each element. These
-                classes control the overall appearance, as well as the showing
-                and hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+                <strong>No. There is no registration charge. </strong>
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingTwo">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                How can I find the nearest Vaccination Center?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              className="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div className="accordion-body">
+                <strong>Just Login and type the nearest pincode to search for the hospital.</strong>
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingThree">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Where will I receive confirmation of date and time of vaccination?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              className="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample"
+            >
+              <div className="accordion-body">
+                <strong>After booking a particluar hospital for appointement you will be redirected to your booking status where your currently booked appointment will be displayed</strong>
               </div>
             </div>
           </div>
@@ -252,6 +280,6 @@ export const Home = () => {
         </div>
         <div className="centerfooter"> Website By Shubham Y</div>
       </footer>
-    </>
+    </div>
   );
 };
