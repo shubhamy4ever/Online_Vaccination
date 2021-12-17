@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import TotalCasesCont from "./TotalCasesCont";
 export const TotalCases = () => {
   localStorage.removeItem("token");
-  let date1 = new Date().toLocaleString().slice(0, 2);
-  // "15/12/2021, 11:39:46 am"
-  //15
+  let currentdate = new Date().toJSON().slice(8,10);
+  //17
+  let date1 = currentdate-1;
 
-  let date2 = new Date().toLocaleString().slice(0, 2) - 1;
-  //14
 
-  let month = new Date().toLocaleString().slice(3, 5);
-  let year = new Date().toLocaleString().slice(6, 10);
-let date = new Date().toDateString();
+
+  let month = new Date().toJSON().slice(5,7);
+  // 12
+  let year = new Date().toJSON().slice(0,4);
+  //2021
+
 
   useEffect(() => {
     getData();
@@ -22,7 +23,7 @@ let date = new Date().toDateString();
   async function getData() {
     const response = await fetch(
       //external api
-      `https://api.covid19api.com/total/country/IN/status/confirmed?from=${year}-${month}-${date2}T00:00:00Z&to=${year}-${month}-${date1}T00:00:00Z`,
+      `https://api.covid19api.com/total/country/IN/status/confirmed?from=${year}-${month}-${date1}T00:00:00Z&to=${year}-${month}-${currentdate}T00:00:00Z`,
       {
         method: "GET",
       }
@@ -36,7 +37,7 @@ let date = new Date().toDateString();
 <div className="container">
 {
   data.map((ele)=>{
-return <TotalCasesCont key={ele.Date} totalcases={ele.Cases} date={date} />
+return <TotalCasesCont key={ele.Date} totalcases={ele.Cases} date={currentdate} />
   })
 }
 
