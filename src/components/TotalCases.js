@@ -13,6 +13,7 @@ export const TotalCases = () => {
   let year = new Date().toJSON().slice(0,4);
   //2021
 
+let completedate=new Date().toDateString();
 
   useEffect(() => {
     getData();
@@ -37,7 +38,7 @@ export const TotalCases = () => {
 <div className="container">
 {
   data.map((ele)=>{
-return <TotalCasesCont key={ele.Date} totalcases={ele.Cases} date={currentdate} />
+return <TotalCasesCont key={ele.Date} totalcases={ele.Cases} date={completedate} />
   })
 }
 
