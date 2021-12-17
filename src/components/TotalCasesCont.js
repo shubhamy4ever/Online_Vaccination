@@ -14,7 +14,7 @@ export default function TotalCasesCont(props) {
     <Link to="/bookavaccine" className="btn btn-primary">Get Vaccinated</Link>
   </div>
   <div className="card-footer text-muted">
-    Precaution is better than cure
+    Prevention is better than cure
   </div>
 </div>
         </div>
