@@ -37,7 +37,8 @@ let completedate=new Date().toDateString();
     <div className="top-more moremargin">
 <div className="container">
 {
-  data.map((ele)=>{
+  //eslint-disable-next-line
+  data==""?<div className="container">Data Not Available Currently</div>:data.map((ele)=>{
 return <TotalCasesCont key={ele.Date} totalcases={ele.Cases} date={completedate} />
   })
 }

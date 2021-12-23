@@ -38,7 +38,7 @@ export const Admin = (props) => {
       <form onSubmit={handleSubmit}>
 
       <div className="container container-223 my-5 ">
-        <h1 className="my-3">Login to book vaccine</h1>
+        <h1 className="my-3">Login to Continue</h1>
         <div className="form-floating mb-3">
           <input
             type="email"
