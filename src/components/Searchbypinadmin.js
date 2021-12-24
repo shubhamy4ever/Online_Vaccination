@@ -169,6 +169,7 @@ let history = useHistory();
                   type="text"
                   className="form-control"
                   id="name"
+                  autocomplete="off"
                   aria-describedby="emailHelp"
                   name="name"
                   onChange={onChange2}
@@ -185,6 +186,7 @@ let history = useHistory();
                   className="form-control"
                   value={hospdetadd.address}
                   name="address"
+                  autocomplete="off"
                   onChange={onChange2}
                 />
               </div>
@@ -198,6 +200,7 @@ let history = useHistory();
                   className="form-control"
                   value={hospdetadd.pincode}
                   name="pincode"
+                  autocomplete="off"
                   onChange={onChange2}
                 />
               </div>

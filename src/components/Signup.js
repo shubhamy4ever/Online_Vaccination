@@ -47,6 +47,7 @@ export const Signup = (props) => {
               name="name"
               onChange={onChange}
               value={credentials.name}
+              autocomplete="off"
             />
             <label htmlFor="name">Full Name</label>
           </div>
@@ -60,6 +61,7 @@ export const Signup = (props) => {
               minLength={6}
               onChange={onChange}
               value={credentials.email}
+              autocomplete="off"
             />
             <label htmlFor="floatingInput">Email address</label>
           </div>
