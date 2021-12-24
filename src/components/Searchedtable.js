@@ -15,7 +15,7 @@ export const Searchedtable = (props) => {
               </th>
             </tr>
             <tr>
-              <th scope="row">
+              <th scope="row" style={{ width: "400px" }}>
                 {props.name}
                 <p className="lighter-cap">{props.address}</p>
               </th>
