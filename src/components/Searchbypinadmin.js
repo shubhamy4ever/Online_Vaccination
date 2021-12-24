@@ -88,6 +88,12 @@ let history = useHistory();
       },
       body: JSON.stringify({ name, address, pincode }),
     });
+    sethospdetails({
+      vaccineType: "",
+      slots: "",
+      date: "",
+      time: "",
+    });
     props.showAlert("added hospital succesfully","success")
   }
   const [hospdetadd, sethospdetadd] = useState({name:"",address:"",pincode:""});
@@ -277,6 +283,7 @@ let history = useHistory();
                   id="Date"
                   name="date"
                   onChange={onChange}
+                  value={hospdetails.date}
                 />
               </div>
               <div className="mb-3">
@@ -289,7 +296,7 @@ let history = useHistory();
                   id="time"
                   name="time"
                   onChange={onChange}
-                 
+                  value={hospdetails.time}
                 >
                    <option selected="true" value="">Please select time</option>
                   <option value="10:30">10:30 AM</option>
@@ -307,7 +314,7 @@ let history = useHistory();
                   id="vaccineType"
                   name="vaccineType"
                   onChange={onChange}
-                 
+                  value={hospdetails.vaccineType}
                 >
                   <option selected="true" value="">Please select Vaccine</option>
                   <option value="covaxin">Covaxin</option>
@@ -324,6 +331,7 @@ let history = useHistory();
                   min="10"
                   max="100"
                   onChange={onChange}
+                  value={hospdetails.slots}
                 />
               </div>
             </div>
