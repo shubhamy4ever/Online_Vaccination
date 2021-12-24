@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "backend for cloud-notes",
+  "description": "backend for Online-Vaccination",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
   },
-  "author": "shubham",
+  "author": "shubham yadav",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
