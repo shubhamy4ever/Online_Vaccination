@@ -27,6 +27,7 @@ let history = useHistory();
   }
 
   let refClose = useRef();
+  let refClose0 = useRef();
   let refRefresh = useRef();
   const [hospdetails, sethospdetails] = useState([]);
 
@@ -96,13 +97,15 @@ let history = useHistory();
        hospdetadd.address,
       hospdetadd.pincode,
     );
-    refClose.current.click();
     sethospdetadd({name:"",address:"",pincode:""});
+    refClose0.current.click();
+   
   }
   function onChange2(e) {
     e.preventDefault();
     sethospdetadd({ ...hospdetadd, [e.target.name]: e.target.value });
   }
+ 
   async function deleteHosp(id){
     // eslint-disable-next-line
     const response = await fetch(`${host}/api/hosp/deletedata/${id}`, {
@@ -113,7 +116,6 @@ let history = useHistory();
           localStorage.getItem("token"),
       },
     });
-    refRefresh.current.click();
     props.showAlert("deleted successfully","success");
   }
 
@@ -153,16 +155,17 @@ let history = useHistory();
             </div>
             <div className="modal-body">
               <div className="mb-3">
-                <label htmlFor="title" className="form-label" name="name">
+                <label htmlFor="name" className="form-label" name="name">
                   Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="title"
+                  id="name"
                   aria-describedby="emailHelp"
                   name="name"
                   onChange={onChange2}
+                  value={hospdetadd.name}
                 />
               </div>
               <div className="mb-3">
@@ -173,7 +176,7 @@ let history = useHistory();
                 <input
                   type="Text"
                   className="form-control"
-                  id="description"
+                  value={hospdetadd.address}
                   name="address"
                   onChange={onChange2}
                 />
@@ -186,7 +189,7 @@ let history = useHistory();
                 <input
                   type="Text"
                   className="form-control"
-                  id="description"
+                  value={hospdetadd.pincode}
                   name="pincode"
                   onChange={onChange2}
                 />
@@ -197,7 +200,7 @@ let history = useHistory();
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
-                ref={refClose}
+                ref={refClose0}
               >
                 Close
               </button>
@@ -237,13 +240,13 @@ let history = useHistory();
             </div>
             <div className="modal-body">
               <div className="mb-3">
-                <label htmlFor="title" className="form-label" name="title">
+                <label htmlFor="Name" className="form-label" name="Name">
                   Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="title"
+                  id="Name"
                   aria-describedby="emailHelp"
                   name="name"
                   value={hospdetails.name}
@@ -257,27 +260,26 @@ let history = useHistory();
                 <input
                   type="Text"
                   className="form-control"
-                  id="description"
+                  id="address"
                   name="address"
                   value={hospdetails.address}
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label" name="description">
+                <label className="form-label" name="Date">
                   Date
                 </label>
 
                 <input
                   type="date"
                   className="form-control"
-                  id="description"
+                  id="Date"
                   name="date"
                   onChange={onChange}
-                  value={hospdetails.date}
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label" name="description">
+                <label className="form-label" name="Time">
                   Time
                 </label>
 
@@ -286,8 +288,9 @@ let history = useHistory();
                   id="time"
                   name="time"
                   onChange={onChange}
-                  value={hospdetails.time}
+                 
                 >
+                   <option selected="true" value="">Please select time</option>
                   <option value="10:30">10:30 AM</option>
                   <option value="12:30">12:30 AM</option>
                   <option value="2:30">2:30 PM</option>
@@ -303,8 +306,9 @@ let history = useHistory();
                   id="vaccineType"
                   name="vaccineType"
                   onChange={onChange}
-                  value={hospdetails.vaccineType}
+                 
                 >
+                  <option selected="true" value="">Please select Vaccine</option>
                   <option value="covaxin">Covaxin</option>
                   <option value="Covishield">Covishield</option>
                 </select>
@@ -319,7 +323,6 @@ let history = useHistory();
                   min="10"
                   max="100"
                   onChange={onChange}
-                  value={hospdetails.slots}
                 />
               </div>
             </div>
