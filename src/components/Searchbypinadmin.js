@@ -117,6 +117,7 @@ let history = useHistory();
       },
     });
     props.showAlert("deleted successfully","success");
+    refRefresh.current.click();
   }
 
   return (
