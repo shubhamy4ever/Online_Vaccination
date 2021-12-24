@@ -8,7 +8,7 @@ export const Searchbypin = (props) => {
 const host="http://localhost:5000"
 
 let history = useHistory();
-  const [search, setSearch] = useState({pincode:""});
+  const [searchC, setSearchC] = useState({pincode:""});
  
   if(!localStorage.getItem("token")){
     history.push("/bookavaccine")
@@ -16,7 +16,7 @@ let history = useHistory();
   }
 
   function handleSubmit() {
-props.fetchdata(search);
+props.fetchdata(searchC);
 }
 
 async function bookVaccine(id){
@@ -34,7 +34,7 @@ async function bookVaccine(id){
 
 function handleChange(e) {
     e.preventDefault();
-    setSearch({ [e.target.name]: e.target.value });
+    setSearchC({ [e.target.name]: e.target.value });
     }
   return (
     <div className="container my-5 moremargin">
@@ -52,7 +52,7 @@ function handleChange(e) {
           className="btn btn-outline-success rounded-search"
           type="button"
           onClick={handleSubmit}
-          disabled={search.pincode.length<6?true:false}
+          disabled={searchC.pincode.length<6?true:false}
         >
           Search
         </button>
