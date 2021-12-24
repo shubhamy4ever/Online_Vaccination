@@ -191,10 +191,7 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>Vaccination Centers provide for a limited number of on-spot registration slots every day. Beneficiaries aged 45 years and above can schedule appointments online or walk-in to vaccination Centers. Beneficiaries aged 18 years and above can schedule appointments online or walk-in to Government vaccination Centers. However, beneficiaries aged 18-44 years should mandatorily register themselves and schedule appointment online before going to a Private vaccination centre.
-
-In general, all beneficiaries are recommended to register online and schedule vaccination in advance for a hassle-free vaccination experience.</strong>
-                overflow.
+                <strong >As this is just a dummy website for covid vaccination yes it is madnatory to book vaccine online via this website</strong>
               </div>
             </div>
           </div>
