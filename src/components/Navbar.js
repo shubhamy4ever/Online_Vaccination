@@ -60,9 +60,12 @@ history.push("/");
                 </Link>
               </li>
             </ul>
-            {!localStorage.getItem("token")?<Link className="btn btn-outline-success" to="/bookavaccine">
-              Book A Vaccine
-            </Link>: <button onClick={handleLogout} className="btn btn-danger">LogOut</button>}
+            {!localStorage.getItem("token")?
+            <form className="d-flex">
+            <Link className="btn btn-outline-success marginforbut " to="/bookavaccine" role="button">Login</Link>
+            <Link className="btn btn-outline-success " to="/signup" role="button">Signup</Link>
+        </form>
+: <button onClick={handleLogout} className="btn btn-danger">LogOut</button>}
           </div>
         </div>
       </nav>
