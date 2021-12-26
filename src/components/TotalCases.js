@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TotalCasesCont from "./TotalCasesCont";
+import {  useLocation } from "react-router-dom";
 export const TotalCases = () => {
+  const location = useLocation();
   localStorage.removeItem("token");
   let currentdate = new Date().toJSON().slice(8,10);
   //17
@@ -16,7 +18,10 @@ export const TotalCases = () => {
 let completedate=new Date().toDateString();
 
   useEffect(() => {
-    getData();
+    if(location.pathname==="/totalcases"){
+      getData();
+    }
+   
     // eslint-disable-next-line
   }, []);
 
