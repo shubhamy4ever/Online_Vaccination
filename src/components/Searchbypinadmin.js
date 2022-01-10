@@ -325,13 +325,13 @@ let history = useHistory();
                 </select>
               </div>
               <div className="mb-3 my-3">
-                <label htmlFor="slots">slots (10-100) </label>
+                <label htmlFor="slots">slots (0-100) </label>
 
                 <input
                   type="number"
                   id="slots"
                   name="slots"
-                  min="10"
+                  min="0"
                   max="100"
                   onChange={onChange}
                   value={hospdetails.slots}
