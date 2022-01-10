@@ -11,7 +11,7 @@ export const Searchedtableadmin = (props) => {
           <tbody>
             <tr>
               <th scope="col" className="center-it-admin">
-                {props.date}
+              {props.slots ? props.date : ""}
               </th>
             </tr>
             <tr>
@@ -23,13 +23,13 @@ export const Searchedtableadmin = (props) => {
                 <div className="row row-cols-auto my-3 mx-3 center-it-box">
                   <div className="card bg-g" style={{ width: "8rem" }}>
                     <div className="card-header">
-                      {props.time}
+                      {props.slots ? props.time : ""}
                       <br />
                       {props.slots ? props.slots + " Slots" : "N/A"}
                     </div>
                   </div>
                 </div>
-                <p className="mx-4 center-it-3">{props.vaccineType}</p>
+                <p className="mx-4 center-it-3">{props.slots ? props.vaccineType : ""}</p>
               </td>
               <td>
                 <button
