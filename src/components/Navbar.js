@@ -59,6 +59,16 @@ history.push("/");
                   Admin
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className={`nav-link ${
+                    location.pathname === "/Bingdata" ? "active" : ""
+                  }`}
+                  to="/Bingdata"
+                >
+                  Bing Data
+                </Link>
+              </li>
             </ul>
             {!localStorage.getItem("token")?
             <form className="d-flex">

@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React, { useState } from 'react';
 import {BookingStatus} from "./components/BookingStatus"
 import { Searchbypinadmin } from "./components/Searchbypinadmin";
+import { Bingdata } from "./components/Bingdata";
 import Alert from "./components/Alert"
 
 
@@ -76,6 +77,9 @@ function App() {
           </Route>
           <Route exact path="/searchhospadmin">
           <Searchbypinadmin hospdetails={hospdetails} fetchdata={fetchdata} showAlert={showAlert}/>
+          </Route>
+          <Route exact path="/bingdata">
+            <Bingdata />
           </Route>
         </Switch> 
       </Router>
