@@ -41,17 +41,6 @@ history.push("/");
               <li className="nav-item">
                 <Link
                   className={`nav-link ${
-                    location.pathname === "/totalcases" ? "active" : ""
-                  }`}
-                  aria-current="page"
-                  to="/totalcases"
-                >
-                  Total Cases
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className={`nav-link ${
                     location.pathname === "/admin" ? "active" : ""
                   }`}
                   to="/admin"

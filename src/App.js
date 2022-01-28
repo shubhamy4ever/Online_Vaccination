@@ -1,7 +1,6 @@
 import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { Home } from "./components/Home";
-import { TotalCases } from "./components/TotalCases";
 import { BookAVaccine } from "./components/BookAVaccine";
 import { Admin } from "./components/Admin";
 import { Signup } from "./components/Signup";
@@ -56,9 +55,6 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-          </Route>
-          <Route exact path="/totalcases">
-            <TotalCases />
           </Route>
           <Route exact path="/bookavaccine">
             <BookAVaccine showAlert={showAlert}/>
