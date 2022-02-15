@@ -132,3 +132,29 @@ i{
   left: 0px;
   overflow: hidden;
 }
+.maincont2 {
+  z-index: -1;
+  opacity: 0.92;
+  height: 100vh;
+  width: 99vw;
+  position: relative;
+  right: 11px;
+}
+.maincont2>video{
+position: relative;
+left: 40px;
+}
+.maincont2::before {
+  content: "";
+  z-index: -1;
+  background-color: #141414;
+  height: 100vh;
+  width: 99vw;
+  position: absolute;
+  left: 10px;
+}
+.toright{
+  position: absolute;
+  right:0px ;
+  bottom: 0px;
+}

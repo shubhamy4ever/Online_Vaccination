@@ -1,94 +1,16 @@
 import React from "react";
-import photo1 from "./images/1.jpg";
-import photo2 from "./images/2.jpg";
-import photo3 from "./images/3.jpg";
 import card1 from "./images/cards1.jpg";
 import card2 from "./images/cards2.jpg";
 import card3 from "./images/cards3.jpg";
+import endpandemic from "./videos/endpandemic.mp4";
 export const Home = () => {
   localStorage.removeItem("token");
   return (
     <div className="top-more">
-      <div
-        id="carouselExampleCaptions"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={photo1} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Covid-19 A pandemic</h5>
-              <p>A deadly disease spread through the coronavirus.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={photo2} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block ">
-              <h5>Caused deaths of more than million lives</h5>
-              <p>
-                covid spread in world at very fast pace and more than million
-                died.
-              </p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={photo3} className="d-block w-100" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>We can defeat covid by Vaccination</h5>
-              <p>
-                Together we can defeat covid by vaccinating ourselves and
-                our loved ones.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
+      <div className="maincont2 ">
+        <video autoPlay loop muted >
+          <source src={endpandemic} type="video/mp4" />
+        </video>
       </div>
       <div className="card ">
         <div className="card-body">
@@ -167,7 +89,10 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>You can signup and then login and book vaccine on this website.</strong>
+                <strong>
+                  You can signup and then login and book vaccine on this
+                  website.
+                </strong>
               </div>
             </div>
           </div>
@@ -191,7 +116,10 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong >As this is just a dummy website for covid vaccination yes it is madnatory to book vaccine online via this website</strong>
+                <strong>
+                  As this is just a dummy website for covid vaccination yes it
+                  is madnatory to book vaccine online via this website
+                </strong>
               </div>
             </div>
           </div>
@@ -239,7 +167,10 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>Just Login and type the nearest pincode to search for the hospital.</strong>
+                <strong>
+                  Just Login and type the nearest pincode to search for the
+                  hospital.
+                </strong>
               </div>
             </div>
           </div>
@@ -253,7 +184,8 @@ export const Home = () => {
                 aria-expanded="false"
                 aria-controls="collapseFive"
               >
-                Where will I receive confirmation of date and time of vaccination?
+                Where will I receive confirmation of date and time of
+                vaccination?
               </button>
             </h2>
             <div
@@ -263,7 +195,11 @@ export const Home = () => {
               data-bs-parent="#accordionExample"
             >
               <div className="accordion-body">
-                <strong>After booking a particluar hospital for appointement you will be redirected to your booking status where your currently booked appointment will be displayed</strong>
+                <strong>
+                  After booking a particluar hospital for appointement you will
+                  be redirected to your booking status where your currently
+                  booked appointment will be displayed
+                </strong>
               </div>
             </div>
           </div>
@@ -276,6 +212,7 @@ export const Home = () => {
           Copyright &copy; All rights reserved
         </div>
         <div className="centerfooter"> Website By Shubham Y</div>
+        <div className="toright">v2.0</div>
       </footer>
     </div>
   );
