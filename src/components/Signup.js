@@ -35,7 +35,7 @@ export const Signup = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="container container-223 my-5 ">
+        <div className="container container-223 my-5 maincont">
           <h1 className="my-3">Signup for booking vaccine</h1>
           <div className="form-floating mb-3">
             <input

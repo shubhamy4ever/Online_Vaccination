@@ -37,7 +37,7 @@ export const BookAVaccine = (props) => {
     <div>
       <form onSubmit={handleSubmit}>
 
-      <div className="container container-223 my-5 ">
+      <div className="container container-223 my-5 maincont">
         <h1 className="my-3">Login to book vaccine</h1>
         <div className="form-floating mb-3">
           <input
