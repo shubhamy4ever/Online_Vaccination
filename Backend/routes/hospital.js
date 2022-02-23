@@ -125,10 +125,13 @@ router.put("/bookvaccine/:id", fetchuser, async (req, res) => {
     const booked = await hospitalDetails
       .findById(req.params.id)
       .select("-admin");
-    //if user has already booked a vaccine and is in booked vaccine database found by his id
-    if (booked.slots <= 0) {
-      return res.json({ success, error: "cant book no slots available" });
-    }
+      //if no slots available still booking -in version 2.0.1 fixed bug 
+   // error occured while testing with multiple users for booking vaccine if other person books slot before then it throws error that search again slot is already booked and attempts to refresh the search
+      if (booked.slots <= 0) {
+        success = false;
+        return res.json({ success, error: "cant book no slots available" });
+      }
+      //if user has already booked a vaccine and is in booked vaccine database found by his id
     let user = await BookedVaccine.findById(req.userdetails.id);
     if (user) {
       success = false;

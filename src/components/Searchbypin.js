@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState , useRef} from "react";
 import { Searchedtable } from "./Searchedtable";
 import { useHistory } from "react-router-dom";
 
@@ -19,6 +19,9 @@ let history = useHistory();
 props.fetchdata(searchC);
 }
 
+//
+let refSearch = useRef();
+
 async function bookVaccine(id){
   // eslint-disable-next-line
   const response = await fetch(`${host}/api/hosp/bookvaccine/${id}`, {
@@ -27,9 +30,18 @@ async function bookVaccine(id){
       "auth-token":
         localStorage.getItem("token"),
     },
+   
+   //added in version 2.0.1 
+   // error occured while testing with multiple users for booking vaccine if other person books slot before then it throws error that search again slot is already booked and attempts to refresh the search
   });
-  history.push("/bookingstatus");
-  props.showAlert("Appointement booked successfully","success");
+  const json = await response.json();
+  if(json.success===false){
+    props.showAlert("No slots available please search again","danger");
+    refSearch.current.click();
+  }else{
+    history.push("/bookingstatus");
+    props.showAlert("Appointement booked successfully","success");
+  }
 }
 
 function handleChange(e) {
@@ -53,6 +65,7 @@ function handleChange(e) {
           type="button"
           onClick={handleSubmit}
           disabled={searchC.pincode.length<6?true:false}
+          ref={refSearch}
         >
           Search
         </button>
