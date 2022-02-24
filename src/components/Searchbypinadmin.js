@@ -9,7 +9,6 @@ export const Searchbypinadmin = (props) => {
   const host = "http://localhost:5000";
 let history = useHistory();
   const [search, setSearch] = useState({ pincode: "" });
-
   if(!localStorage.getItem("token")){
     history.push("/admin")
     props.showAlert("Trying to access unauthorized page Login first!!","danger");
@@ -72,8 +71,14 @@ let history = useHistory();
       },
       body: JSON.stringify({ vaccineType, slots, date, time }),
     });
-    refRefresh.current.click();
-    props.showAlert("added data successfully","success");
+    
+    if(search.pincode===""){
+      props.showAlert("added slots successfully please type in the pincode and search again","success"); 
+    }else{
+      refRefresh.current.click();
+      props.showAlert("added data successfully","success");
+      
+    }
   }
 
   //add hospital
@@ -122,8 +127,13 @@ let history = useHistory();
           localStorage.getItem("token"),
       },
     });
-    props.showAlert("deleted successfully","success");
-    refRefresh.current.click();
+    if(search.pincode===""){
+      props.showAlert("deleted successfully please type in the pincode and search again","success"); 
+    }else{
+      props.showAlert("deleted successfully","success");
+      refRefresh.current.click();
+    }
+   
   }
 
   return (
@@ -178,7 +188,7 @@ let history = useHistory();
               </div>
               <div className="mb-3">
                 <label className="form-label" name="address">
-                  address
+                  Address
                 </label>
 
                 <input
@@ -192,7 +202,7 @@ let history = useHistory();
               </div>
               <div className="mb-3">
                 <label className="form-label" name="pincode">
-                  pincode
+                  Pincode
                 </label>
 
                 <input
