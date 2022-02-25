@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Online Vaccination
+## _Graduation project 2022_
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-## Available Scripts
+Online vaccination is a website made with tech stack MERN Stack here are some of the features:
 
-In the project directory, you can run:
+- Secure Passwords stored in database using hashing and salting
+- jwt authentication used
+- Modern UI
+- Very stable (Have fixed multiple bugs and added many features)
 
-### `npm start`
+## Tech
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Online Vaccination uses a number of open source techstack to work properly:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [React.js](https://reactjs.org/) - Developed by META And is Open Source!
+-  [VSCode](https://code.visualstudio.com/) - awesome text editor by Microsoft
+- [Bootstrap](https://getbootstrap.com/) - great UI boilerplate for modern web apps
+- [Node.js](https://nodejs.org/en/) - evented I/O for the backend
+- [Express.js](https://expressjs.com/) - fast node.js network app framework
+- [Mongo DB](https://www.mongodb.com/) - A document based database system
+-  Plain CSS  - Normal css by me
 
-### `npm test`
+And of Project Online Vaccination itself is open source with a Right now private repo
+ on GitHub.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Online Vaccination requires [Node.js](https://nodejs.org/) v10+ to run.
+Also MongoDB Should be installed from their official website  [MongoDB](https://www.mongodb.com/try/download/community)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install the frontend dependencies and devDependencies.
+Open Powershell
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```sh
+cd Online_Vaccination_AllKeys
+npm i
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create build folder using following commands
+```sh
+npm run build
+```
 
-### `npm run eject`
+Install the dependencies for Backend
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```sh
+cd ./Backend
+npm i
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create .env file and add the following in Backend folder
+```sh
+DB_CONNECTION=mongodb://localhost:27017/OnlineVaccination?readPreference=primary&appname=MongoDB%20Compass&ssl=false
+JWT_SECRET=your jwt secret for admin password 
+JWT_SECRET_Admin= your jwt secret for admin password 
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+I have shell scripted in Package.json to run both frontend build folder and backend using one command run the following
+```sh
+cd ..
+npm run dev
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+MIT
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Free Software, Hell Yeah!**

@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "cd ./Backend && npm run start",
-    "client": "npm run start",
+    "client": "serve -s build",
     "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "eslintConfig": {
