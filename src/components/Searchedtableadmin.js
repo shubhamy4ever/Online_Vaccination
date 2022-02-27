@@ -38,7 +38,7 @@ export const Searchedtableadmin = (props) => {
                   data-bs-toggle="modal" data-bs-target="#exampleModal"
                   onClick={()=>{props.addslots(props.whole)}}
                 >
-                  Add Slots
+                  Add / Remove Slots
                 </button>
                 <i className="fas fa-trash-alt my-3 mx-2" onClick={()=>{props.deleteHosp(props.id)}}></i>
               </td>
