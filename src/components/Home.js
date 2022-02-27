@@ -67,7 +67,7 @@ export const Home = () => {
       </div>
       <hr />
       <div>
-        <h2 className="my-3">Frequently Asked Question's:</h2>
+        <h2 className="my-4 mx-4 boldandstrong">Frequently Asked Question's:</h2>
         <div className="accordion my-4 container" id="faq">
           <div className="accordion-item">
             <h2 className="accordion-header" id="headingOne">

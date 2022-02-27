@@ -30,16 +30,15 @@ footer {
   background: #141414;
   color: white;
   padding: 41px 40px;
+  position: relative;
+  top: 107px;
 }
 .centerfooter {
   margin-left: 120px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
-footer{
-  position: relative;
-  top: 130px;
-}
+
 .height {
   height: 150px;
 }
@@ -53,7 +52,9 @@ footer{
   position: absolute;
   top: 60px;
 }
-
+.boldandstrong{
+  font-weight: bolder;
+}
 
 /* media queries for responsivness */
 @media only screen and (max-width: 503px) {
