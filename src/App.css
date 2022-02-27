@@ -55,20 +55,6 @@ footer {
 .boldandstrong{
   font-weight: bolder;
 }
-
-/* media queries for responsivness */
-@media only screen and (max-width: 503px) {
-  .card {
-    display: none;
-  }
-
-  .card-main {
-    display: none;
-  }
-  .accordion {
-    display: none;
-  }
-}
 .lighter-cap{
   font-size: 14px;
   font-weight: lighter;
