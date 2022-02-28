@@ -38,6 +38,8 @@ async function bookVaccine(id){
   if(json.success===false){
     props.showAlert("No slots available please search again","danger");
     refSearch.current.click();
+  }else if(!localStorage.getItem("token")){
+  props.showAlert("Can't book appointment login required","danger");
   }else{
     history.push("/bookingstatus");
     props.showAlert("Appointement booked successfully","success");
