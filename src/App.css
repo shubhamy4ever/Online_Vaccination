@@ -146,7 +146,7 @@ left: 40px;
   bottom: 0px;
 }
 .container-overflow{
-overflow-y: scroll;
+overflow-y: auto;
 height: 70vh;
 
 }
