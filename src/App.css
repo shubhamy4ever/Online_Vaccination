@@ -145,3 +145,8 @@ left: 40px;
   right:0px ;
   bottom: 0px;
 }
+.container-overflow{
+overflow-y: scroll;
+height: 70vh;
+
+}

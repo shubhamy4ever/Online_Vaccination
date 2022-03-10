@@ -393,7 +393,7 @@ let history = useHistory();
       </form>
 
       {/*.map will be used to populate  table body that is reusable*/}
-      <div>
+      <div className="container-overflow">
         {props.hospdetails === null
           ? alert("empty box")
           : props.hospdetails.map((hosp) => {
