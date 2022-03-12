@@ -78,4 +78,4 @@ MIT
 
 **Free Software, Hell Yeah!**
 
-Any contributions to above project is welcomed
+Any contributions to above project is welcomed!
