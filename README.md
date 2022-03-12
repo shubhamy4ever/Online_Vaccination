@@ -69,7 +69,7 @@ npm run production
 And if you want to do changes and want to reflect it in live mode run react in development not from build folder using this command
 ```sh
 cd ..
-npm run developmeny
+npm run development
 ```
 
 ## License
