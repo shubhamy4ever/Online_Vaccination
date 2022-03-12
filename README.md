@@ -77,3 +77,5 @@ npm run development
 MIT
 
 **Free Software, Hell Yeah!**
+
+Any contributions to above project is welcomed
