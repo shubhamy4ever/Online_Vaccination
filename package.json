@@ -18,11 +18,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "cd ./Backend && npm run start",
-    "devclient":"npm run start",
+    "server": "cd ./Backend && yarn run start",
+    "devclient":"yarn run start",
     "client": "serve -s build",
-    "development":"concurrently \"npm run devclient\" \"npm run server\"",
-    "production": "concurrently \"npm run client\" \"npm run server\""
+    "development":"concurrently \"yarn run devclient\" \"yarn run server\"",
+    "production": "concurrently \"yarn run client\" \"yarn run server\""
   },
   "eslintConfig": {
     "extends": [
