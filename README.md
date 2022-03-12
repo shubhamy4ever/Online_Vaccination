@@ -62,7 +62,14 @@ JWT_SECRET_Admin= your jwt secret for admin password
 I have shell scripted in Package.json to run both frontend build folder and backend using one command run the following
 ```sh
 cd ..
-npm run dev
+npm run production
+```
+
+
+And if you want to do changes and want to reflect it in live mode run react in development not from build folder using this command
+```sh
+cd ..
+npm run developmeny
 ```
 
 ## License
