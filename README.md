@@ -74,9 +74,7 @@ npm run development
 
 ## License
 
-MIT
-
-**Free Software, Hell Yeah!**
+Apache License 2.0
 
 
 
