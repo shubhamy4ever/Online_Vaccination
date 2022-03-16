@@ -36,7 +36,7 @@ async function bookVaccine(id){
   });
   const json = await response.json();
   if(json.success===false){
-    props.showAlert("No slots available please search again","danger");
+    props.showAlert("cant book vaccine","danger");
     refSearch.current.click();
   }else if(!localStorage.getItem("token")){
   props.showAlert("Can't book appointment login required","danger");

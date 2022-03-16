@@ -132,7 +132,8 @@ router.put("/bookvaccine/:id", fetchuser, async (req, res) => {
         return res.json({ success, error: "cant book no slots available" });
       }
       //if user has already booked a vaccine and is in booked vaccine database found by his id
-    let user = await BookedVaccine.findById(req.userdetails.id);
+    let user = await BookedVaccine.findOne({user:req.userdetails.id});
+    console.log(user);
     if (user) {
       success = false;
       return res.status(400).json({
@@ -140,7 +141,7 @@ router.put("/bookvaccine/:id", fetchuser, async (req, res) => {
         error: "you already have booked a vaccine",
       });
     }
-
+    console.log(user);
     const book = new BookedVaccine({
       user: req.userdetails.id,
       hospitalid: booked.id,
