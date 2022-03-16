@@ -106,6 +106,7 @@ i{
 }
 .maincont{
   height: 552px;
+   
 }
 .maincont::before {
   content: "";
@@ -117,7 +118,6 @@ i{
   position: absolute;
   bottom: 0px;
   left: 0px;
-  overflow: hidden;
 }
 .maincont2 {
   z-index: -1;
@@ -150,3 +150,4 @@ overflow-y: auto;
 height: 70vh;
 
 }
+
