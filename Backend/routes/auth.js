@@ -17,7 +17,7 @@ let success = false;
 router.post(
   "/createuser",
   [
-    body("name", "Enter a valid name").isLength({ min: 3 }).isAlpha(),
+    body("name", "Enter a valid name").isLength({ min: 3 }).isAlpha('en-US', {ignore: ' '}),
     body("email", "Enter a valid email").isEmail(),
     body("password", "Password must be atleast 5 characters").isLength({
       min: 5,
