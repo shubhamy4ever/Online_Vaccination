@@ -69,7 +69,7 @@ let history = useHistory();
           );
         })}
          {/* eslint-disable-next-line */}
-        <Link to="/searchhosp" className={`btn btn-primary my-4 ${bookingStatus==""?"":"disabled"}`} >Book Vaccine</Link>
+        <Link to="/searchhosp" className="btn btn-primary my-4" >Book Vaccine</Link>
       </div>
     </div>
   );
