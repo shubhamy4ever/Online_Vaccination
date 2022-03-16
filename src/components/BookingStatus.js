@@ -35,10 +35,16 @@ let history = useHistory();
           localStorage.getItem("token"),
       },
     });
-    setbookingStatus([]);
-    props.showAlert("Appointment cancelled successfully","success");
+    const json = await response.json();
+    if(json.success===true){
+      setbookingStatus([]);
+      props.showAlert(json.message,"success");
+    }else{
+      props.showAlert(json.error,"danger");
+    }
+      
+    }
 
-  }
 
   return (
     <div className="container my-5 moremargin">

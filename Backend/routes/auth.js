@@ -27,7 +27,7 @@ router.post(
     // If there are errors, return Bad request and the errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ success, errors: errors.array() });
+      return res.status(400).json({ success, errors: errors.array() ,error:"Invalid Credentials" });
     }
     try {
       // Check whether the user with this email exists already
@@ -62,7 +62,7 @@ router.post(
       res.json({ success, authtoken });
     } catch (error) {
       console.error(error.message);
-      res.status(500).send("Internal Server Error");
+      res.status(500).send({error:"Internal Server Error"});
     }
   }
 );
@@ -173,7 +173,7 @@ router.post(
       res.json({ success, authtoken });
     } catch (error) {
       console.error(error.message);
-      res.status(500).send("Internal Server Error");
+      res.status(500).send({error:"Internal Server Error"});
     }
   }
 );
@@ -226,7 +226,7 @@ router.post(
       res.json({ success, authtoken });
     } catch (error) {
       console.error(error.message);
-      res.status(500).send("Internal Server Error");
+      res.status(500).send({error:"Internal Server Error"});
     }
   }
 );
@@ -238,7 +238,7 @@ router.get("/getuser", fetchuser, async (req, res) => {
     res.send(userID);
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send({error:"Internal Server Error"});
   }
 });
 router.get("/getadmin", fetchadmin, async (req, res) => {
@@ -248,7 +248,7 @@ router.get("/getadmin", fetchadmin, async (req, res) => {
     res.send(admin);
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send({error:"Internal Server Error"});
   }
 });
 module.exports = router;

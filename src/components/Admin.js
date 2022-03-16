@@ -24,9 +24,10 @@ export const Admin = (props) => {
     if(json.success===true){
       localStorage.setItem("token",json.authtoken);
       history.push("/searchhospadmin")
-      props.showAlert("Logged In Successfully","success");
+      props.showAlert("Logged in sucessfully","success");
     }else{
-      props.showAlert("invalid cedentials","danger");
+      props.showAlert(json.error,"danger");
+
     }
   };
   function onChange(e) {

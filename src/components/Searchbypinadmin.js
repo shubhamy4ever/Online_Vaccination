@@ -11,7 +11,7 @@ let history = useHistory();
   const [search, setSearch] = useState({ pincode: "" });
   if(!localStorage.getItem("token")){
     history.push("/admin")
-    props.showAlert("Trying to access unauthorized page Login first!!","danger");
+    props.showAlert("unauthorized access page Login first!!","danger");
   }
 
 
@@ -71,12 +71,21 @@ let history = useHistory();
       },
       body: JSON.stringify({ vaccineType, slots, date, time }),
     });
-    
+    const json = await response.json();
     if(search.pincode===""){
       props.showAlert("added slots successfully please type in the pincode and search again","success"); 
-    }else{
+    }else if(json.error===undefined){
+      localStorage.removeItem("token");
+      history.push("/admin")
+      props.showAlert("Cant add/remove slots unauthorized user","danger");
+    }
+    else if(json.success===false){
+      
+      props.showAlert(json.error,"danger");
+    }
+    else{
       refRefresh.current.click();
-      props.showAlert("added data successfully","success");
+      props.showAlert(json.message,"success");
       
     }
   }
@@ -99,7 +108,19 @@ let history = useHistory();
       date: "",
       time: "",
     });
-    props.showAlert("added hospital succesfully","success")
+    const json = await response.json();
+    if(json.error===undefined){
+      localStorage.removeItem("token");
+      history.push("/admin")
+      props.showAlert("Cant add hospital unauthorized user","danger");
+    }
+    else if(json.success===false){
+      
+      props.showAlert(json.error,"danger");
+    }else{
+
+      props.showAlert(json.message,"success")
+    }
   }
   const [hospdetadd, sethospdetadd] = useState({name:"",address:"",pincode:""});
   function handleClick2() {
@@ -127,11 +148,21 @@ let history = useHistory();
           localStorage.getItem("token"),
       },
     });
+    const json = await response.json();
     if(search.pincode===""){
       props.showAlert("deleted successfully please type in the pincode and search again","success"); 
+    }else if(json.error===undefined){
+      localStorage.removeItem("token");
+      history.push("/admin")
+      props.showAlert("Cant delete hospital unauthorized user","danger");
+    }
+    else if(json.success===false){
+      
+      props.showAlert(json.error,"danger");
     }else{
-      props.showAlert("deleted successfully","success");
+      props.showAlert(json.message,"success");
       refRefresh.current.click();
+
     }
    
   }

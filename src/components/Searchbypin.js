@@ -36,13 +36,13 @@ async function bookVaccine(id){
   });
   const json = await response.json();
   if(json.success===false){
-    props.showAlert("cant book vaccine","danger");
+    props.showAlert(json.error,"danger");
     refSearch.current.click();
   }else if(!localStorage.getItem("token")){
-  props.showAlert("Can't book appointment login required","danger");
+  props.showAlert(json.error,"danger");
   }else{
     history.push("/bookingstatus");
-    props.showAlert("Appointement booked successfully","success");
+    props.showAlert("Booked sucessfully","success");
   }
 }
 

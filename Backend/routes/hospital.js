@@ -59,7 +59,7 @@ router.post(
       const saveDetails = await hospitaldet.save();
       res.json(saveDetails);
     } catch (err) {
-      res.status(500).send("Internal Server Error");
+      res.status(500).send({error:"Internal Server Error"});
     }
   }
 );
@@ -83,17 +83,17 @@ router.put("/updatedetails/:id", fetchadmin, async (req, res) => {
     }
     let hospital = await hospitalDetails.findById(req.params.id);
     if (!hospital) {
-      return res.status(404).send("not found");
+      return res.status(404).send({error:"not found",success});
     }
     if (hospital.admin.toString() !== req.admin.id) {
-      return res.status(401).send("unauthorized");
+      return res.status(401).send({error:"unauthorized",success});
     }
     hospital = await hospitalDetails.findByIdAndUpdate(req.params.id, {
       $set: updated,
     });
     res.json(hospital);
   } catch (err) {
-    res.status(500).send("Internal Server Error");
+    res.status(500).send({error:"Internal Server Error"});
   }
 });
 
@@ -104,15 +104,16 @@ router.delete("/deletedata/:id", fetchadmin, async (req, res) => {
     let hospital = await hospitalDetails.findById(req.params.id);
     if (!hospital) {
       //if you put return app will not crash else it will
-      return res.status(404).send("not found");
+      return res.status(404).send({error:"not found",success});
     }
     if (hospital.admin.toString() !== req.admin.id) {
-      return res.status(401).send("unauthorized");
+      return res.status(401).send({error:"unauthorized",success});
     }
     hospital = await hospitalDetails.findByIdAndDelete(req.params.id);
-    res.send("Hospital data deleted");
+    success=true;
+    res.send({error:"Hospital data deleted",success});
   } catch (err) {
-    res.status(500).send("Internal Server Error");
+    res.status(500).send({error:"Internal Server Error"});
   }
 });
 
@@ -133,15 +134,15 @@ router.put("/bookvaccine/:id", fetchuser, async (req, res) => {
       }
       //if user has already booked a vaccine and is in booked vaccine database found by his id
     let user = await BookedVaccine.findOne({user:req.userdetails.id});
-    console.log(user);
+  
     if (user) {
       success = false;
       return res.status(400).json({
         success,
-        error: "you already have booked a vaccine",
+        error: "You already have booked a vaccine",
       });
     }
-    console.log(user);
+
     const book = new BookedVaccine({
       user: req.userdetails.id,
       hospitalid: booked.id,
@@ -164,7 +165,7 @@ router.put("/bookvaccine/:id", fetchuser, async (req, res) => {
       $set: updated,
     });
   } catch (err) {
-    return res.status(500).send("Internal Server Error");
+    return res.status(500).send({error:"Internal Server Error"});
   }
 });
 
@@ -177,19 +178,19 @@ router.delete("/delete/:id", fetchuser, async (req, res) => {
 
     if (!bookeddata) {
       //if you put return app will not crash else it will
-      return res.status(404).send("not found");
+      return res.status(404).send({error:"not found",success});
     }
 
     //only that user can delete it
     if (bookeddata.user.toString() !== req.userdetails.id) {
-      return res.status(401).send("unauthorized");
+      return res.status(401).send({error:"unauthorized",success});
     }
-
+success=true;
     bookeddata = await BookedVaccine.findByIdAndDelete(req.params.id);
-    res.send("your vaccine booking data deleted");
+    res.send({message:"Your vaccine booking data deleted",success});
     //updating slots data
   } catch (err) {
-    return res.status(500).send("Internal Server Error");
+    return res.status(500).send({error:"Internal Server Error"});
   }
 });
 

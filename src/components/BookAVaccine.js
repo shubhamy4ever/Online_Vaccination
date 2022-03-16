@@ -24,9 +24,9 @@ export const BookAVaccine = (props) => {
     if(json.success===true){
       localStorage.setItem("token",json.authtoken);
       history.push("/bookingstatus")
-      props.showAlert("Logged in Sucessfully","success");
+      props.showAlert("Logged in sucessfully","success");
     }else{
-      props.showAlert("Invalid-Credentials","danger");
+      props.showAlert(json.error,"danger");
     }
   };
   function onChange(e) {

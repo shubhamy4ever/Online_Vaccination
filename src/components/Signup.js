@@ -24,9 +24,9 @@ export const Signup = (props) => {
     const json = await response.json();
     if(json.success===true){
       history.push("/bookavaccine");
-      props.showAlert("Account Created Sucessfully","success");
+      props.showAlert(json.message,"success");
     }else{
-      props.showAlert("Invalid-Credentials","danger");
+      props.showAlert(json.error,"danger");
     }
   };
   function onChange(e) {
