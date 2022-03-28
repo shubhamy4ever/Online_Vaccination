@@ -1,8 +1,6 @@
 # Online Vaccination
 ## _Graduation project 2022_
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 Online vaccination is a website made with tech stack MERN Stack here are some of the features:
 
 - Secure Passwords stored in database using hashing and salting
