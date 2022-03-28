@@ -74,7 +74,7 @@ let history = useHistory();
     const json = await response.json();
     if(search.pincode===""){
       props.showAlert("added slots successfully please type in the pincode and search again","success"); 
-    }else if(json.error===undefined){
+    }else if(json.error2){
       localStorage.removeItem("token");
       history.push("/admin")
       props.showAlert("Cant add/remove slots unauthorized user","danger");
@@ -85,7 +85,7 @@ let history = useHistory();
     }
     else{
       refRefresh.current.click();
-      props.showAlert(json.message,"success");
+      props.showAlert("Added/Removed Slots Sucessfully","success");
       
     }
   }
@@ -109,7 +109,7 @@ let history = useHistory();
       time: "",
     });
     const json = await response.json();
-    if(json.error===undefined){
+    if(json.error2){
       localStorage.removeItem("token");
       history.push("/admin")
       props.showAlert("Cant add hospital unauthorized user","danger");
@@ -119,7 +119,7 @@ let history = useHistory();
       props.showAlert(json.error,"danger");
     }else{
 
-      props.showAlert(json.message,"success")
+      props.showAlert("Added Hospital Sucessfully","success")
     }
   }
   const [hospdetadd, sethospdetadd] = useState({name:"",address:"",pincode:""});
@@ -160,7 +160,7 @@ let history = useHistory();
       
       props.showAlert(json.error,"danger");
     }else{
-      props.showAlert(json.message,"success");
+      props.showAlert("Deleted hospital sucessfully","success");
       refRefresh.current.click();
 
     }
