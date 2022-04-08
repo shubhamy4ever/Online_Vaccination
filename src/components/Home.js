@@ -3,6 +3,7 @@ import card1 from "./images/cards1.jpg";
 import card2 from "./images/cards2.jpg";
 import card3 from "./images/cards3.jpg";
 import endpandemic from "./videos/endpandemic.mp4";
+import  {MdPhone} from "react-icons/md";
 export const Home = () => {
   localStorage.removeItem("token");
   return (
@@ -16,7 +17,7 @@ export const Home = () => {
         <div className="card-body">
           <div className="d-flex height bd-highlight">
             <div className="p-2 flex-fill bd-highlight align-self-center helpinfo">
-              Helpline number
+              Helpline number <MdPhone />
             </div>
             <div className="p-2 flex-fill bd-highlight align-self-center">
               {" "}

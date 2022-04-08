@@ -1,4 +1,5 @@
 import React from "react";
+import { MdDelete } from 'react-icons/md';
 export const Searchedtableadmin = (props) => {
 
   return (
@@ -40,7 +41,7 @@ export const Searchedtableadmin = (props) => {
                 >
                   Add / Remove Slots
                 </button>
-                <i className="fas fa-trash-alt my-3 mx-2" onClick={()=>{props.deleteHosp(props.id)}}></i>
+                <MdDelete className="my-3 mx-2 iconr" onClick={()=>{props.deleteHosp(props.id)}}/>
               </td>
             </tr>
           </tbody>

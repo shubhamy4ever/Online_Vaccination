@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, useLocation ,useHistory} from "react-router-dom";
+import { FiLogOut } from 'react-icons/fi';
+import { FaHospitalAlt } from 'react-icons/fa';
+
 export const Navbar = () => {
 let history = useHistory();
   const location = useLocation();
@@ -12,7 +15,7 @@ history.push("/");
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            Online Vaccination
+          <FaHospitalAlt /> Online Vaccination
           </Link>
           <button
             className="navbar-toggler"
@@ -64,7 +67,7 @@ history.push("/");
             <Link className="btn btn-outline-success marginforbut " to="/bookavaccine" role="button">Login</Link>
             <Link className="btn btn-outline-success " to="/signup" role="button">Signup</Link>
         </form>
-: <button onClick={handleLogout} className="btn btn-danger">LogOut</button>}
+: <button onClick={handleLogout} className="btn btn-danger"><FiLogOut /></button>}
           </div>
         </div>
       </nav>

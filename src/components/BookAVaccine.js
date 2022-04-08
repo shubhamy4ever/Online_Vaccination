@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import {useHistory,Link} from "react-router-dom";
-
 export const BookAVaccine = (props) => {
   localStorage.removeItem("token");
   let history = useHistory();

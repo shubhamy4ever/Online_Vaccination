@@ -1,7 +1,8 @@
 import React, { useState , useRef} from "react";
 import { Searchedtable } from "./Searchedtable";
 import { Link , useHistory } from "react-router-dom";
-
+import { BiArrowBack } from 'react-icons/bi';
+import { MdOutlineSearch } from 'react-icons/md';
 export const Searchbypin = (props) => {
   //use effect first the setting and initialzing state
 
@@ -53,9 +54,9 @@ function handleChange(e) {
   return (
     <div className="container my-5 moremargin">
        <Link
-          className="btn btn-success my-3"
+          className="btn btn-success my-4"
           to="/bookingstatus"
-        >	&#8592; Go Back</Link>
+        ><BiArrowBack/> Go Back</Link>
       <h2>Search By Pincode</h2>
       <form className=" d-flex my-2">
         <input
@@ -73,7 +74,7 @@ function handleChange(e) {
           disabled={searchC.pincode.length<6?true:false}
           ref={refSearch}
         >
-          Search
+        < MdOutlineSearch />
         </button>
       </form>
 

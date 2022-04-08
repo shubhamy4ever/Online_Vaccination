@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 
 import { Searchedtableadmin } from "./Searchedtableadmin";
 import { useHistory } from "react-router-dom";
+import { MdOutlineAdd , MdOutlineSearch } from 'react-icons/md';
 
 export const Searchbypinadmin = (props) => {
   //use effect first the setting and initialzing state
@@ -177,7 +178,7 @@ let history = useHistory();
           data-bs-target="#addhosp"
         >
           {" "}
-          Add A Hospital
+          <MdOutlineAdd className="my-3"/> Add A Hospital
         </button>
       </div>
       {/* add hospital modal */}
@@ -192,7 +193,7 @@ let history = useHistory();
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
-                Add Hospital
+              Add Hospital 
               </h5>
               <button
                 type="button"
@@ -419,7 +420,7 @@ let history = useHistory();
           disabled={search.pincode.length < 6 ? true : false}
           ref={refRefresh}
         >
-          Search
+         <MdOutlineSearch />
         </button>
       </form>
 

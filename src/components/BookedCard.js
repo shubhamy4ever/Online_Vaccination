@@ -1,5 +1,6 @@
 import React from "react";
 
+import { TiCancel } from 'react-icons/ti';
 
 export default function BookedCard(props) {
 
@@ -14,7 +15,7 @@ export default function BookedCard(props) {
     <p className="card-text lighter-cap2">On {props.date} at {props.time}</p>
     <p className="card-text lighter-cap2">{props.vaccineType}</p>
     {/* alert after deleting  */}
-          <i className="fas fa-trash-alt my-3 mx-2" onClick={()=>{props.cancelAppointment(props.id)}}> Cancel Appointment</i>
+          <button className="my-1 btn btn-danger iconr" onClick={()=>{props.cancelAppointment(props.id)}} > <TiCancel/> Cancel Appointment </button>
   </div>
 </div>
     )
