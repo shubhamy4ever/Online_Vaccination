@@ -213,7 +213,7 @@ export const Home = () => {
           Copyright &copy; All rights reserved
         </div>
         <div className="centerfooter"> Website By Shubham Y</div>
-        <div className="toright">v2.4.6</div>
+        <div className="toright">v2.5.6</div>
       </footer>
     </div>
   );
